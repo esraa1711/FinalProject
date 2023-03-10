@@ -1,0 +1,36 @@
+<div class="container">
+
+
+
+
+    <div class="card mb-5 shadow mt-5" style="max-width: 1000px; ">
+        <div class="row g-0">
+            <div class="col-md-4 border border-3">
+                <img src="http://localhost:8000/storage/img/{{data.img}}" class="img-fluid rounded-start" alt="...">
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body p-5">
+
+                    <h3 class="card-text">Name : {{data.name}}</h3>
+                    <!-- <span *ngFor=" let Category of Categories">
+                        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+                            *ngIf="data.categories_id  == Category.id; then thenBlock "></h5>
+                        <ng-template #thenBlock><strong>Category :</strong>  {{Category.name}}</ng-template>
+                    </span> -->
+                    <p class="card-title">Description : {{data.desc}} </p>
+                    <p class="card-title">Price : {{data.price}} </p>
+                    <input type="number" name="number" #number (change)="addnumber($event)" >
+
+
+                    <!-- <p>Price :{{selected.price}}</p> -->
+                    <button type="button" class="btn btn-success m-2" (click)="Add()"> add To Card</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>

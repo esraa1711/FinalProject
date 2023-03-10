@@ -1,0 +1,34 @@
+<div class="container">
+<div class="row" >
+    <div class=" col-lg-4 my-3 w-25">
+        <label for="" class="my-1">Categories:</label>
+        <select class="form-control" (change)="filtercategory($event)" >
+            <option value="All" selected>All</option>
+            <option value="{{cat.id}}" *ngFor="let cat of Categories">{{cat.name}}</option>
+          
+        </select>
+    </div>
+    <div class="col-lg-4 my-3 w-25">
+        <label for="" class="my-1">Brands:</label>
+        <select class="form-control" (change)="filterbrand($event)" >
+            <option value="All" selected>All</option>
+            <option value="{{brand.id}}" *ngFor="let brand of Brands">{{brand.brand}}</option>
+          
+        </select>
+    </div>
+</div>
+
+
+
+<div class="row box"  >
+    <div class="col-lg-4" *ngFor="let item of Products  " routerLink="/details/{{item.id}}">
+
+<app-product [data]="item"></app-product>
+
+    </div>
+
+</div>
+
+
+
+</div>

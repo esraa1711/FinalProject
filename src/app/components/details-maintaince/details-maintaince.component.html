@@ -1,0 +1,182 @@
+
+<div class="background position-relative mb-5">
+<div class="background-color position-absolute ">
+<div class="transform text-light ms-5">
+  <!-- db  image -->
+<img src="https://tawfiqia.com/images/14696?w=150" style="width:150px;border: 2px solid white;" class=" mt-5 rounded-circle" alt="">
+<!-- db  -->
+<h1>name</h1>
+<p>location</p>
+<span class=""><ngb-rating [max]="5" [readonly]="true" [rate]="finalrating"></ngb-rating></span><span>{{ finalrating }}{{ ratingcount }}reviews</span>
+<p>tag services</p>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="text">
+we provide you with all works of mechanics, maintenance, electricity, air conditioning, plumbing, faber, paints, renewal of all types of owners cars, minibuses, buses, transport, trailers and refrigerators of all kinds
+</div>
+<div>
+  <div class="row">
+     <div class="col-lg-6 mt-5">
+      <div class="row">
+        <div class="col-md-6 mt-5">
+           <ul>
+        <li><i class="fa-solid fa-tags">
+
+        </i> mechnical</li>
+         <li><i class="fa-solid fa-tags"></i> Car Denting</li>
+          <li><i class="fa-solid fa-tags"></i>lubricants</li>
+           <li><i class="fa-solid fa-tags"></i> Fast Service</li>
+      </ul>
+        </div>
+         <div class="col-md-6 mt-5">
+           <ul>
+        <li><i class="fa-solid fa-tags"></i>Electricity</li>
+         <li><i class="fa-solid fa-tags"></i>paints</li>
+          <li><i class="fa-solid fa-tags"></i>gear box</li>
+           <li><i class="fa-solid fa-tags"></i> Computer detection</li>
+      </ul>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+     <div class="col-lg-6 mb-5  "  >
+       <form class="style py-5  w-100" action="" [formGroup]="form" (ngSubmit)="submit()">
+
+        <input class=" mb-3 mt-3" id="name" formControlName="name"  type="text" placeholder="enter your name">
+  <div for="name"
+          *ngIf="
+            form.controls['name'].touched &&
+            form.controls['name'].invalid
+          "
+        >
+          <div
+            class="form-text text-danger"
+            *ngIf="form.controls['name'].errors?.['required']"
+          >
+            This field is required
+          </div>
+          <div
+            class="form-text text-danger"
+            *ngIf="form.controls['name'].errors?.['minlength']"
+          >
+            This field length must be 3
+          </div>
+        </div>
+        <input class=" mb-3" formControlName="email" id="email" type="email" placeholder="enter your email">
+  <div for="email"
+          *ngIf="
+            form.controls['email'].touched &&
+            form.controls['email'].invalid
+          "
+        >
+          <div
+            class="form-text text-danger"
+            *ngIf="form.controls['email'].errors?.['required']"
+          >
+            This field is required
+          </div>
+          <div
+            class="form-text text-danger"
+            *ngIf="form.controls['email'].errors?.['pattern']"
+          >
+            This field length must be 3
+          </div>
+        </div>
+        <textarea  class =" mb-3 "type="text "id="text" formControlName="text" cols="50" rows="4" placeholder="massage"></textarea>
+ <div for="text"
+          *ngIf="
+            form.controls['text'].touched &&
+            form.controls['text'].invalid
+          "
+        >
+          <div
+            class="form-text text-danger"
+            *ngIf="form.controls['text'].errors?.['required']"
+          >
+            This field is required
+          </div>
+          <div
+            class="form-text text-danger"
+            *ngIf="form.controls['text'].errors?.['minlength']"
+          >
+            This field length must be 3
+          </div>
+             <div
+            class="form-text text-danger"
+            *ngIf="form.controls['text'].errors?.['maxlength']"
+          >
+            This field length must be 20
+          </div>
+        </div>
+        <input type="submit"  [disabled]="form.invalid" class="color button text-light boder " value="submit">
+
+ </form>
+
+
+
+
+      </div>
+     </div>
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+   <!-- Button trigger modal -->
+<a type="button" class=" postion" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<i class="fa fa-comment t-color " style="font-size: 50px;"></i>
+</a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add comment to </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #userinfo="ngForm" (ngSubmit)="onsubmit(userinfo.value)" class=" formrate w-100">
+         <input type="text" name="user_id" placeholder="enter  your name"ngModel>
+         <input type="email"name="useremail"  placeholder="enter  your email"ngModel>
+  
+          <ngb-rating  ngModel name="star_rating"[max]='5' (click)="rating()"[formControl]="ratingcontrol" class="fs-3 text-warning"></ngb-rating>
+         <div>
+         <textarea type="usertext" cols="50" name="comments" rows="2"ngModel >add comment</textarea>
+         </div>
+     <input class="btn color text-light fontbtn" type="submit" value="submit">
+        </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-warning text-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning text-light">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

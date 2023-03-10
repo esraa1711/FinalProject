@@ -1,0 +1,32 @@
+nav{
+    background-color: #3b3e41;
+}
+.navbar-brand{
+    color: #f0A942;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.nav-link  {
+color: white;
+font-size: 20px;
+margin-right: 10px;
+}
+
+.user-img{
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;
+    border-left: #f0A942 2px solid;
+
+}
+.user{
+    border-radius: 100%;
+    margin-left: 1rem;
+}
+
+i{
+    border-left: #f0A942 2px solid;
+    padding-left: 15px;
+
+}
