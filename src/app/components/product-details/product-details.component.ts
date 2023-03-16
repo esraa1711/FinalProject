@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -17,7 +17,7 @@ export class ProductDetailsComponent {
   dataproduct = {}
   // Categories:any=[]
 
-  constructor(private route: ActivatedRoute, private service: ProductService , private api : CartService) {
+  constructor(private route: ActivatedRoute, private service: ProductService , private api : CartService ,  private router: Router) {
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -33,7 +33,7 @@ export class ProductDetailsComponent {
   getProudectId() {
 
     this.service.getProductDetails(this.id).subscribe(res => {
-      this.data = res.Product
+      this.data = res
       console.log(this.data)
     })
 
@@ -59,6 +59,8 @@ export class ProductDetailsComponent {
 
 
   //   }
+  this.router.navigate(["cart"]);
+
   let product_id= this.data.id
 this.dataproduct ={'product_id':   this.data.id , 'price':this.data.price , 'number': this.number }
 

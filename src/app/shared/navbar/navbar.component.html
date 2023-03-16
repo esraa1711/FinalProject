@@ -28,12 +28,12 @@
               <img src="../../assets/img/photo-1633332755192-727a05c4013d.jfif" alt="" class="img-fluid user">
             </div> -->
   
-            <button  routerLink="cart"  class="btn">
+            <button  routerLink="cart"  class="btn" *ngIf="islogged">
               <i style="font-size: 30px; color: white;" class="fa fa-cart-plus"></i>
-              <div class="badge bg-danger"></div>
+              <div class="badge bg-danger">{{CartCount}}</div>
             </button>
             <li class="nav-item" *ngIf="islogged">
-              <button class="btn" (click)="Logout()">Logout</button>
+              <button class="btn btn-light" (click)="Logout()">Logout</button>
             </li>
 
            

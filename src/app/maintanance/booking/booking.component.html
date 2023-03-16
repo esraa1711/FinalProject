@@ -1,0 +1,50 @@
+
+<h1 style="text-align: center; margin-top: 20px">booking</h1>
+<div class="col-md-3 mt-5 mb-5">
+  <span class="btn btn-warning text-white" (click)="navigate()"
+    >back to my dashboard</span
+  >
+</div>
+<div class="mt-5" style="width: 80%; margin: auto">
+  <table class="table border">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Date</th>
+        <th scope="col">Desc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <span *ngFor="let user of user"> -->
+
+      <tr *ngFor="let book of booking">
+        <!--
+
+      <span>{{ item }}</span> -->
+        <!-- <span >{{ user.name }} </span> -->
+        <!-- <ng-template #thenBlock>{{Category.name}}</ng-template> -->
+        <th scope="row">1</th>
+        <td>
+          <span *ngFor="let x of user">
+            <h5
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100ch;
+              "
+              *ngIf="book.user_id == x.id; then thenBlock"
+            ></h5>
+            <ng-template #thenBlock>{{ x.name }}</ng-template>
+          </span>
+        </td>
+        <td>{{ book.date }}</td>
+        <td>{{ book.desc }}</td>
+        <!-- <span *ngFor="let user of user">{{ user.name }}</span> -->
+      </tr>
+      <!-- </span> -->
+      <tr></tr>
+    </tbody>
+  </table>
+</div>

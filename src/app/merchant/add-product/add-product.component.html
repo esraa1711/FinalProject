@@ -1,0 +1,78 @@
+<div class="side d-flex">
+    <app-sidebar></app-sidebar>
+    <p class="ms-auto mx-5 mt-2"></p>
+
+
+</div>
+<div class="container w-75">
+
+
+
+
+<form action=""  [formGroup]="addProduct">
+    <div class="row mt-3">
+        <div class="col-md-12  my-3 w-100">
+            <label for="name "class=" me-4 form-label" >Name</label>
+            <input type="text" name="name" id="name" formControlName="name"   class="form-control w-100">
+        </div>
+        <div class="col-md-12  my-3 w-100">
+            <label for="SelectImg" class="btn btn-primary">Select Img</label>
+            <span>{{fileNmae}}</span>
+            <input type="file" name="" id="SelectImg" hidden class="form-control" (change)="selectImg($event)">
+        </div>
+
+        <div class="col-md-12  my-3 w-100">
+            <label for="made "class=" me-4 form-label" >made in</label>
+            <input type="text" name="made" id="made" formControlName="made"   class="form-control w-100">
+        </div>
+
+
+
+        <div class="col-md-12  my-3 w-100">
+            <label for="type "class=" me-4 form-label" >type</label>
+            <input type="text" name="type" id="type" formControlName="type"   class="form-control w-100">
+        </div>
+        
+        <div class="col-md-12  my-3 w-100">
+            <label for="price "class=" me-4 form-label" >Price</label>
+            <input type="text" name="price" id="price" formControlName="price"   class="form-control w-100">
+        </div>
+
+
+
+
+
+        <div class="col-md-12  my-3 w-100">
+            <label for="desc "class=" me-4 form-label" >Description</label>
+            <input type="text" name="desc" id="desc" formControlName="desc"   class="form-control w-100">
+        </div>
+        <div class="col-md-12  my-3 ">
+            <label for="categories_id">Category</label>
+            <select name="" id="" formControlName="categories_id"   class="form-control w-100">
+                <option value="{{cat.id}}" *ngFor="let cat of category" >{{cat.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-12  my-3 ">
+            <label for="brand">Brand</label>
+            <select name="" id="" formControlName="category_brand_id"   class="form-control w-100">
+                <option value="{{brand.id}}" *ngFor="let brand of Brands" >{{brand.brand}}</option>
+            </select>
+        </div>
+
+        <div class="col-md-12  my-3 ">
+            <label for="model">Model</label>
+            <select formControlName="category_model_id"   class="form-control w-100">
+                <option value="{{model.id}}" *ngFor="let model of models" >{{model.model}}</option>
+            </select>
+        </div>
+      
+    </div>
+    <button class="btn btn-primary" (click)="creatProduct()" routerLink="/merchant/home">Submit</button>
+
+
+
+
+</form>
+</div>
+
+

@@ -1,0 +1,27 @@
+.navbar-toggler .menu i{
+    color: #f0A942;
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+i{
+    font-size: 35px;
+    margin-top: 5px ;
+    margin-left: 10px;
+    color: #f0A942; 
+    padding: 7px;
+    
+}
+li{
+font-size: 20px;
+font-weight: bold;
+padding-bottom: 7px;
+cursor: pointer;
+
+}
+
+li i{
+    font-size: 15px;
+    color: #3b3e41;
+}

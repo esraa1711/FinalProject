@@ -1,0 +1,100 @@
+<div class="back" [style.background-image]="
+    'url(http://localhost:8000/storage/img/' +
+    maintaincecenter_data.img_cover +
+    ')'
+  ">
+  <div class="background-color">
+    <div class="transform text-light ms-5 yaamiiiira">
+      <!-- db  image -->
+
+      <img src="http://localhost:8000/storage/img/{{
+          maintaincecenter_data.img_logo
+        }}" style="width: 150px; border: 2px solid white" class="mt-5 rounded-circle" alt="" />
+      <!-- <img src="http://localhost:8000/storage/img/{{maintaincecenter_data.center_name.img_back }}"  class="image" alt="maintanice_center" /> -->
+      <!-- db  -->
+      <h1>{{ maintaincecenter_data.center_name }}</h1>
+      <p>{{ maintaincecenter_data.address }}</p>
+      <ngb-rating ngModel [rate]="starrating" name="star_rating" [max]="5" [readonly]="true"
+        class="fs-3 text-warning"></ngb-rating>
+      <!-- <span>{{ starrating }}|review</span> -->
+
+      <p>tag services</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="text mt-5">
+    {{ maintaincecenter_data.desc }}
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-lg-6 mt-5">
+        <div class="row">
+          <div class="col-md-6 mt-5">
+            <ul>
+              <li><i class="fa-solid fa-tags"> </i> mechnical</li>
+              <li><i class="fa-solid fa-tags"></i> Car Denting</li>
+              <li><i class="fa-solid fa-tags"></i>lubricants</li>
+              <li><i class="fa-solid fa-tags"></i> Fast Service</li>
+            </ul>
+          </div>
+          <div class="col-md-6 mt-5">
+            <ul>
+              <li><i class="fa-solid fa-tags"></i>Electricity</li>
+              <li><i class="fa-solid fa-tags"></i>paints</li>
+              <li><i class="fa-solid fa-tags"></i>gear box</li>
+              <li><i class="fa-solid fa-tags"></i> Computer detection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5">
+        <!-- form booking -->
+        <form class="style py-5 w-100" [formGroup]="form" (ngSubmit)="submitBooking()">
+
+          <input type="date" class="form-control mb-3 m-t3" formControlName="date" />
+
+          <textarea class="mb-3" type="text " id="desc" formControlName="desc" cols="50" rows="4"
+            placeholder="massage"></textarea>
+    
+          <input type="submit" class="color button text-light boder hover-btn" value="book"  (click)="OPenrate()"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ratemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add comment to</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formrate" (ngSubmit)="onsubmit()" class="formrate w-100">
+        
+
+          <input type="text" formControlName="maintenance_id" hidden />
+
+          <div>
+            <ngb-rating formControlName="star_rating" name="star_rating" [max]="5" [readonly]="false"
+              class="fs-3 text-warning"></ngb-rating>
+            <textarea type="usertext" cols="50" name="comments" rows="2" class="mb-3" id="comments"
+              formControlName="comments">
+           add comment</textarea>
+
+          </div>
+          <input class="btn color text-light fontbtn" type="submit" value="submit" data-bs-dismiss="modal" (click)="Close()"/>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-warning text-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning text-light">Save changes</button>
+        </div> -->
+    </div>
+  </div>
+</div>

@@ -1,1 +1,93 @@
-<p>carts works!</p>
+<!-- {{ProductCart[0].price|json}}
+{{ProductCart[0].desc|json}} -->
+<ng-container>
+
+    <div class="container mt-5">
+        <h4 class="mb-3 mt-5">You have <strong>{{ProductCart.length}} </strong>item in your cart</h4>
+
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <!-- <th>Description</th> -->
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of ProductCart ; let index = index">
+
+                            <td>{{index+1}}</td>
+                            <td style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 20ch;">
+                                {{item.product.name}}
+
+                            </td>
+
+
+                            <td>
+                                <img src="http://localhost:8000/storage/img/{{item.product.img}}" alt="" width="50px">
+
+
+
+                            </td>
+
+
+
+
+                            <td>{{item.price}}</td>
+                            <td>
+                                <div class="btn btn-danger mx-3" (click)="min(index ,item.id)">-</div>
+<!-- <button type="button"><i class="fa fa-plus"></i></button> -->
+                                <input type="number" [(ngModel)]="item.number"  (change)="change( index, item.id)">
+                                <!-- <button type="button"><i class="fa fa-minus"></i></button> -->
+
+                                <div class="btn btn-danger mx-3" (click)="plus(index , item.id)"zz>+</div>
+                                <!-- {{item.number}} -->
+                            </td>
+                            <td>{{item.number*item.price}}</td>
+
+                            <td>
+                                <button class="btn btn-danger"><i class="fas fa-trash-alt" (click)="Del(item.id)"></i></button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div class="text-center mb-5 mt-5">
+
+
+                    <button class="btn btn-danger mx-2" (click)="DelAll()">Empty Cart</button>
+                    <button routerLink="/products" class="btn btn-primary mx-2" routerLink="/store">Shop More</button>
+                    <button class="btn btn-success mx-2" (click)="SendOrder()">Checkout</button>
+                    <strong>Grand Total :{{Total}} L.E</strong>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- <h1>{{ProductCart}}</h1> -->
+<!-- 
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container> -->

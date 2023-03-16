@@ -1,0 +1,58 @@
+<!-- <div [style.background-image]="'url(assets/image2.jpg)'"> -->
+    <div class="container ">
+        <div class="row">
+          <div class=" border mt-5 mb-5 " style="width:80%; margin:auto">
+              <form [formGroup]="maintenanceForm" (ngSubmit)="submitMaintenanceForm()">
+                      <!-- <input type="text" value="maintenance" hidden formControlName="maintenance"> -->
+                      <div class="">
+                          <label for="maintenanceName" class="form-label">center name</label>
+                          <input type="text" class="form-control" id="maintenanceName" formControlName="center_name">
+                      </div>
+                      <div class="">
+                          <label for="maintenanceEmail" class="form-label">city</label>
+                          <input type="text" class="form-control" id="maintenancecity"
+                              formControlName="city">
+                          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                      </div>
+                      <div class="">
+                          <label for="maintenancePass" class="form-label">adress</label>
+                          <input type="text" class="form-control" id="maintenancePass" formControlName="adress">
+                      </div>
+                      <div class="">
+                          <label for="img_logo" class="form-label">img_logo</label>
+                          <input #img_logo class="form-control" type="file" (change)="selectimg1($event)" id="img_logo"formControlName="img_logo">
+                      </div>
+                      <div class="">
+                          <label for="img_cover" class="form-label">img_cover</label>
+                         <input #img_cover class="form-control" type="file" (change)="selectimg2($event)" id="img_cover"formControlName="img_cover">
+                      </div>
+                      <div class="">
+                          <label for="start_day" class="form-label">start_day</label>
+                          <input type="text" class="form-control" id="maintenanceCity" formControlName="start_day">
+                      </div>
+
+                       <div class="">
+                          <label for="end_day" class="form-label">end_day</label>
+                          <input type="text" class="form-control" id="" formControlName="end_day">
+                      </div>
+                         <div class="">
+                          <label for="start_day" class="form-label">start_time</label>
+                          <input type="time" class="form-control" id="maintenanceCity" formControlName="start_time">
+                      </div>
+                       <div class="">
+                          <label for="end_day" class="form-label">end_time</label>
+                          <input type="time" class="form-control" id="" formControlName="end_time">
+                      </div>
+                      <div class="">
+
+                          <label for="desc" class="form-label">desc</label>
+                          <textarea class="form-control" type="text" id="desc" formControlName="desc"></textarea>
+
+                      </div>
+                      <button type="submit" class="btn color mt-2 mb-2 " data-bs-dismiss="modal">Submit</button>
+                  </form>
+          </div>
+        </div>
+
+      </div>
+<!-- </div> -->

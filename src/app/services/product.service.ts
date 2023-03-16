@@ -14,10 +14,19 @@ export class ProductService {
    return this.http.get<any>('http://localhost:8000/api/product')
   }
 
+  AllProduct(){
+    return this.http.get<any>('http://localhost:8000/api/Allproduct')
+   }
+ 
+
   getAllCategories(){
     return this.http.get<any>('http://localhost:8000/api/categories')
   }
 
+  
+  getAllModels(){
+    return this.http.get<any>('http://localhost:8000/api/categorymodel')
+  }
   getAllBrand(){
     return this.http.get<any>('http://localhost:8000/api/categorybrand')
 
@@ -35,5 +44,9 @@ export class ProductService {
   getProductDetails( id: any){
     return this.http.get<any>(`http://localhost:8000/api/product/`+id)
 
+  }
+
+  storeProduct(data : any){
+    return this.http.post<any>('http://localhost:8000/api/product/store' , data)
   }
 }

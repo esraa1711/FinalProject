@@ -11,6 +11,7 @@ export class AllProductsComponent implements OnInit {
   Products: any[] = []
   Categories: any[] = []
   Brands: any[] = []
+  ProductCart:any[]=[]
   constructor(private service: ProductService) { }
   ngOnInit(): void {
     this.getProducts()
@@ -22,8 +23,8 @@ export class AllProductsComponent implements OnInit {
 
 
   getProducts() {
-    this.service.getAllProduct().subscribe((res: any) => {
-      this.Products = res.Products
+    this.service.AllProduct().subscribe((res: any) => {
+      this.Products = res
 
 
       console.log(this.Products)
@@ -106,10 +107,12 @@ export class AllProductsComponent implements OnInit {
     })
   }
 
-  // getDetails(){
-  //   this.service.getProductDetails($id).subscribe((res:any)=>{
-  //     console.log(res)
-  //   })
+
+  addToCart(event :any){
+console.log(event)
+ 
+}
+
 }
 
 

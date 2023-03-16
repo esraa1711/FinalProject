@@ -1,6 +1,7 @@
 import { Component , OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 
 
 @Component({
@@ -9,7 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent  implements OnInit{
-constructor( private auth : AuthService){
+
+constructor( private auth : AuthService , private serviceCart: CartService){
+  this.CartCount = Number(localStorage.getItem("cart"))
   this.islogged = this.auth.isLogged()
   this.auth.getLoggedUser().subscribe(
     (data)=>{
@@ -17,19 +20,17 @@ constructor( private auth : AuthService){
       console.log("change" , data)
     }
   )
+  this.serviceCart.cartCount.subscribe((data)=>{
+    this.CartCount = data
+  })
 }
-islogged:boolean 
-ngOnInit(): void{
-  
-}
+islogged:boolean ;
+CartCount:number ; 
+ngOnInit(): void{}
 Logout(){
   this.auth.logout()
 
 }
+}
   
 
-
-
-
-
-}

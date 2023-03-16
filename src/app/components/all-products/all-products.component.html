@@ -21,9 +21,9 @@
 
 
 <div class="row box"  >
-    <div class="col-lg-4" *ngFor="let item of Products  " routerLink="/details/{{item.id}}">
+    <div class="col-lg-4" *ngFor="let item of Products  " >
 
-<app-product [data]="item"></app-product>
+<app-product [data]="item"  (item)="addToCart($event)"></app-product>
 
     </div>
 

@@ -1,9 +1,9 @@
 <header>
-    <div class="title" *ngIf="!islogged">
+    <div class="title" >
         <div class="container text-center ">
             <h1>Let's Start To Upgrade Your Car</h1>
-            <button class="btn">Register</button>
-            <button class="btn">login</button>
+            <button class="btn btn-dark" routerLink="/account" *ngIf="!islogged">Join Us</button>
+           
         </div>
     </div>
 </header>
@@ -22,10 +22,9 @@
         <div class="col-md-6 col-lg-4">
           <div class="feat align-items-center">
             <div class="icon-holder">
-              <img src="../../assets/img/sp2.jpg" alt="">
+              <img src="../../../assets/imgs/parts.png" alt="">
             </div>
             <h3 class="mb-2 mt-2">Spare Parts</h3>
-            <p class="text-black-50">Lorem ipsum dolor sit amet.</p>
           </div>
 
           
@@ -34,10 +33,9 @@
         <div class="col-md-6 col-lg-4">
           <div class="feat align-items-center">
             <div class="icon-holder">
-              <img src="../../assets/img/acc.jpg" alt="">
+              <img src="../../../assets/imgs/1.jpg" alt="">
             </div>
             <h3 class="mb-2 mt-2">Accessories</h3>
-            <p class="text-black-50">Lorem ipsum dolor sit amet.</p>
           </div>
 
           
@@ -48,10 +46,9 @@
         <div class="col-md-6 col-lg-4">
           <div class="feat align-items-center">
             <div class="icon-holder">
-              <img src="../../assets/img/oi.jpg" alt="">
+              <img src="../../../assets/imgs/different-types-of-car-oil.jpeg" alt="">
             </div>
-            <h3 class="mb-2 mt-2">Accessories</h3>
-            <p class="text-black-50">Lorem ipsum dolor sit amet.</p>
+            <h3 class="mb-2 mt-2">Oils</h3>
           </div>
 
           
@@ -66,124 +63,33 @@
 
 
 <!-- Start brands -->
-<div class="car-brands text-center pt-5 pb-5 bg-light">
-    <div class="container">
-      <div class="main-title position-relative mb-5">
-        <h2>Top Barnds</h2>
-      </div>
 
-
-      <div class="row">
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center ">
-            <div class="brand-img">
-              <img src="../../assets/img/Chery-1.jpg" alt="">
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/logaster-2020-08-h-carloso-1-11.png" alt="">
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/download.jpg" alt="">
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/12-jaguar-car-logo-png-brand-image.png.crdownload" alt="" >
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/5ec3e46558550c000442774b.png" alt="" >
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/9-jeep-car-logo-png-brand-image.png" alt="">
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/logaster-2020-08-h-carloso-1-11.png" alt="">
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-md-4 col-lg-3 ">
-          <div class="brand align-items-center">
-            <div class="brand-img">
-              <img src="../../assets/img/Chery-1.jpg" alt="">
-            </div>
-            <h4 class="mb-2 mt-2">Brand 1</h4>
-
-
-          </div>
-
-        </div>
-      </div>
+<div id="carouselExampleIndicators" class="carousel slide  m-auto " data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../../../assets/imgs/sss.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide">
     </div>
   </div>
-
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 
   <!-- end brands -->

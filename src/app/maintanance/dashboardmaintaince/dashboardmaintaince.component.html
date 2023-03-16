@@ -1,0 +1,81 @@
+<div class=" d-flex  nav">
+
+  <app-sidebars></app-sidebars>
+    
+  <li routerLink="profile" class="ms-auto">Complete Your Profile</li>
+
+
+
+
+</div>
+
+    
+  <div>
+   
+     <table class="table  text-center mt-5" id="mainTable">
+          <thead>
+  <!-- <span *ngFor="let x of maincenter"> -->
+    <!-- {{ x.id }} -->
+  
+            <!-- </span> -->
+            <tr>
+  
+  <!-- 'center_name',
+          'city',
+          'address',
+          'img_logo',
+          'img_cover',
+          'start_day',
+          'end_day',
+          'start_time',
+          'end_time',
+          'desc', -->
+  
+          <th scope="col">#</th>
+                  <th scope="col" >center_name</th>
+                  <th scope="col" >city</th>
+                  <th scope="col">address</th>
+                  <th scope="col" >img_logo</th>
+                  <th scope="col" >img_cover</th>
+                  <th scope="col" >start_day</th>
+                  <th scope="col">end_day</th>
+                   <th scope="col">start_time</th>
+                    <th scope="col">end_time</th>
+                     <th scope="col">desc</th>
+                     <th scope="col"></th>
+  
+              </tr>
+          </thead>
+          <tbody id="tableBody">
+  
+              <tr class="userOne order-details" *ngFor="let center of   maincenter;let indexOfelement=index; ">
+                  <th scope="row">{{indexOfelement+1}}</th>
+                  <td class="center_name">{{ center.center_name }}</td>
+                  <td class="merchantNID">{{ center.city }}</td>
+                  <td>{{ center.address }}</td>
+  <!-- img_logo -->
+  
+                  <!-- {{ center.img_logo }} -->
+                  <td class="orderType"><img src="http://localhost:8000/storage/img/{{
+            center.img_logo}}" width="100px" height="100px"></td>
+                  <td class="orderPrice"><img src="http://localhost:8000/storage/img/{{
+            center.img_cover}}" alt="" width="100px" height="100px"></td>
+                  <td>{{ center.start_day }}</td>
+                   <td>{{ center.end_day }}</td>
+                    <td>{{ center.start_time }}</td>
+                     <td>{{ center.end_time }}</td>
+                    <td>{{ center.desc }}</td>
+  <span class="row">
+    <span class="col-3 me-5">
+                    <!-- <td class="btn text-dark btn-danger"(click)="delte( center.id)">delete -->
+  <!-- </td> -->
+    </span>
+ 
+  </span>
+  
+  </tr>
+  
+  
+          </tbody>
+      </table>
+  </div>

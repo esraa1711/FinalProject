@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
+  islogged:boolean ;
 constructor(private auth:AuthService){
   this.islogged = this.auth.isLogged()
   this.auth.getLoggedUser().subscribe(
@@ -17,7 +18,7 @@ constructor(private auth:AuthService){
     }
   )
 }
-islogged:boolean 
+
 ngOnInit(): void {
   
 }

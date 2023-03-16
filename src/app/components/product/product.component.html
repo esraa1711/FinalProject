@@ -1,17 +1,28 @@
-
 <div class="card ">
-   
-    <img src="http://localhost:8000/storage/img/{{data.img}}"alt="">
+<div routerLink="/details/{{data.id}}">
+
+
+    <img src="http://localhost:8000/storage/img/{{data.img}}" alt="">
     <h3 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{data.name}}</h3>
-   <span *ngFor=" let Category of Categories" >
-       <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"  *ngIf="data.categories_id  == Category.id; then thenBlock " ></h5>
-       <ng-template #thenBlock>{{Category.name}}</ng-template>
+    <span *ngFor=" let Category of Categories">
+        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+            *ngIf="data.categories_id  == Category.id; then thenBlock "></h5>
+        <ng-template #thenBlock>{{Category.name}}</ng-template>
     </span>
-  
+
     <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{data.desc}}</p>
     <p><strong>Price: </strong>{{data.price}}$</p>
-                    <button class="btn btn-primary"  >Show More</button>
-
+    <!-- <button class="btn btn-primary" >Show More</button> -->
 </div>
-
-
+    <br>
+    <div class="d-flex justify-content-center "  *ngIf="islogged"  >
+        <button class="btn btn-primary "  (click)="ADD($event)">Add Cart</button>
+        <!-- <div class="d-flex" *ngIf="addButton"> -->
+            <input type="number" class="form-control w-25 " hidden [(ngModel)]="number" (change)="numberItem($event)">
+            <!-- <button class="btn btn-danger"  addButton="false">Add</button> -->
+    
+        <!-- </div> -->
+    
+    </div>
+ 
+</div>

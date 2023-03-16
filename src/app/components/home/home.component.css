@@ -154,3 +154,12 @@ i{
 }
 
 /* end thay say */
+
+.title{
+    min-height:50vh ;
+}
+
+
+.carousel{
+    width: 95%;
+}

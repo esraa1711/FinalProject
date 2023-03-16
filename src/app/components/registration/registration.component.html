@@ -5,19 +5,18 @@
     <div class="gray">
     </div>
     
-    <div class="d-flex container text-center">
-        <div class="col-5 img mt-5"><img width="100%" src="../../assets/imgs/florian-olivo-5Fzlfb0GR1E-unsplash.jpg" alt="">
+     <div class=" d-flex container text-center w-75 ">
+        <div class="col-lg-5 img mt-5"><img  src="../../../assets/imgs/WhatsApp Image 2023-03-11 at 10.41.18 AM.jpeg" alt="" >
         </div>
-        <div class="col-7 links text-center mt-5">
+        <div class="col-lg-7 links text-center mt-5">
             <h1 class="mt-5">Create Account As :</h1>
             <div class=" mt-5 d-grid gap-2 col-6 mx-auto bg-secondary p-5 border border-3 rounded ">
                 <button (click)="openModalRegistration()" type="button" class="btn btn-dark">Registration</button>
                 <button (click)="openModalLogin()" type="button" class="btn btn-dark"> Log in</button>
             </div>
         </div>
-    </div>
-    
-    <!-- </div> -->
+    </div> 
+
     <!------------------------------ registration ------------------------------------------------------>
     
     <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,7 +114,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form [formGroup]="maintenanceForm" (ngSubmit)="submitMaintenanceForm()">
+                    <form [formGroup]="maintenanceForm" >
                         <!-- <input type="text" value="maintenance" hidden formControlName="maintenance"> -->
     
                         <div class="mb-3">
@@ -163,18 +162,18 @@
                             <input type="text" class="form-control" id="maintenanceid" formControlName="idmc">
     
                             <label for="idmcfront" class="form-label">ID Front</label>
-                            <input class="form-control" type="file" id="idmcfront"formControlName="idmcfront">
+                            <input class="form-control" type="file" id="idmcfront"formControlName="idmcfront" (change)="selectImgMen($event)">
                             <label for="idmcback" class="form-label">ID Back</label>
-                            <input class="form-control" type="file" id="idmcback"formControlName="idmcback">
+                            <input class="form-control" type="file" id="idmcback"formControlName="idmcback" (change)="selectImgMen2($event)">
                         </div>
                         <div class="mb-3">
                             <div> <label for="" class="form-label">Commercial Record</label></div>
                             <label for="crmcfront" class="form-label">Front</label>
-                            <input class="form-control" type="file" id="crmcfront"formControlName="crmcfront">
+                            <input class="form-control" type="file" id="crmcfront"formControlName="crmcfront" (change)="selectImgMen3($event)">
                             <label for="cmmcback" class="form-label">Back</label>
-                            <input class="form-control" type="file" id="cmmcback"formControlName="crmcback">
+                            <input class="form-control" type="file" id="cmmcback"formControlName="crmcback" (change)="selectImgMen4($event)">
                         </div>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="MenCreate()">Submit</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -196,7 +195,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form [formGroup]="merchantForm" (ngSubmit)="submitMerchantForm()">
+                    <form [formGroup]="merchantForm" >
                         <!-- <input type="text" value="merchant" hidden formControlName="merchant"> -->
     
                         <div class="mb-3">
@@ -244,18 +243,18 @@
                             <input type="text" class="form-control" id="merchantid" formControlName="idm">
     
                             <label for="idmfront" class="form-label">ID Front</label>
-                            <input class="form-control" type="file" id="idmfront"formControlName="idmfront">
+                            <input class="form-control" type="file" id="idmfront" formControlName="idmfront" (change)=" selectImg($event)">
                             <label for="idmback" class="form-label">ID Back</label>
-                            <input class="form-control" type="file" id="idmback"formControlName="idmback">
+                            <input class="form-control" type="file" id="idmback" formControlName="idmback" (change)=" selectImg2($event)">
                         </div>
                         <div class="mb-3">
                             <div> <label for="" class="form-label">Commercial Record</label></div>
                             <label for="crmfront" class="form-label">Front</label>
-                            <input class="form-control" type="file" id="crmfront"formControlName="crmfront">
-                            <label for="cmrcback" class="form-label">Back</label>
-                            <input class="form-control" type="file" id="crmback"formControlName="crmback">
+                            <input class="form-control" type="file" id="crmfront" formControlName="crmfront" (change)=" selectImg3($event)">
+                            <label for="crmback" class="form-label">Back</label>
+                            <input class="form-control" type="file" id="crmback" formControlName="crmback" (change)=" selectImg4($event)">
                         </div>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="createMer()">Submit</button>
                     </form>
                 </div>
                 <div class="modal-footer">

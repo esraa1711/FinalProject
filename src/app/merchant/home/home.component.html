@@ -1,0 +1,78 @@
+
+<div class="side d-flex">
+    <app-sidebar></app-sidebar>
+    <p class="ms-auto mx-5 mt-2"></p>
+
+
+</div>
+
+
+
+<div class="container text-center">
+
+<button class="btn add" routerLink="/merchant/add-product">Add New Product</button>
+    <table class="table table-striped mt-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Made In</th>
+                <th scope="col">Type</th>
+                <th scope="col">Category</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Model</th>
+                <th scope="col">Img</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of MerPro">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.made}}</td>
+                <td>{{product.type}}</td>
+                <td>
+
+                    <div *ngFor=" let cat of Category">
+                        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+                            *ngIf="product.categories_id  == cat.id; then thenBlock "></h5>
+                        <ng-template #thenBlock>{{cat.name}}</ng-template>
+                    </div>
+                </td>
+
+
+
+
+                <td>
+
+                    <div *ngFor=" let brand of Brand">
+                        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+                            *ngIf="product.category_brand_id  == brand.id; then thenBlock "></h5>
+                        <ng-template #thenBlock>{{brand.brand}}</ng-template>
+                    </div>
+                </td>
+
+
+
+
+                <td>
+
+                    <div *ngFor=" let model of Models">
+                        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+                            *ngIf="product.category_model_id  == model.id; then thenBlock "></h5>
+                        <ng-template #thenBlock>{{model.model}}</ng-template>
+                    </div>
+                </td>
+                <td><img src="http://localhost:8000/storage/img/{{product.img}}" alt="" width="100px"></td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="DeleteProduct(product.id)"><i class="fa fa-trash"></i></button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
